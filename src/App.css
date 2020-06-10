@@ -36,3 +36,39 @@
     transform: rotate(360deg);
   }
 }
+
+.sidebarStyle {
+  display: inline-block;
+  position: absolute;
+  top: 10%;
+  left: 0;
+  margin: 12px;
+  background-color: #404040;
+  color: #ffffff;
+  z-index: 1 !important;
+  padding: 6px;
+  font-weight: bold;
+  }
+   
+.mapContainer {
+  position: absolute;
+  top: 10%;
+  right: 30%;
+  left: 0;
+  bottom: 0;
+}
+
+#main-container {
+
+}
+
+.nav-element {
+  display: inline-block;
+}
+
+#navbar {
+  height: 100px;
+  background-color: #404040;
+  color: aliceblue;
+  text-align: center;
+}
