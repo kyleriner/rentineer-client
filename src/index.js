@@ -19,6 +19,7 @@ export const logout = () => {
   }
 }
 
+
 const auth = (state = false, action) => {
   switch (action.type) {
     case 'LOGIN':
@@ -29,6 +30,8 @@ const auth = (state = false, action) => {
       return false;
   }
 }
+
+
 
 let store = createStore(auth)
 

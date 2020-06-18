@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { useDispatch } from 'react-redux'
 import {logout} from '../index'
+import NavBar from './NavBar'
 import { Button, Form } from "react-bootstrap";
 
 
@@ -65,11 +66,16 @@ export default function Profile() {
 
     return(
         <div>
-            Profile Page
+            <NavBar/>
+            <div id="auth">
             <div> Hello {user} </div>
+            <br></br>
+            
 
             <form onSubmit={handleSubmit}>
                 <Form.Group>
+                Change Username:
+
                     <Form.Control
                         autoFocus
                         type='username'
@@ -77,6 +83,9 @@ export default function Profile() {
                         onChange={e => setUsername(e.target.value)}
                         />
                 </Form.Group>
+                <br></br>
+                Change Password:
+
                 <Form.Group >
                     <Form.Control
                         type="password"
@@ -84,13 +93,16 @@ export default function Profile() {
                         onChange={e => setPassword(e.target.value)}
                         />
                 </Form.Group>
-                <Button block disabled={!validateForm()} type="submit">
+                <br></br>
+                <Button className = 'auth-button' block disabled={!validateForm()} type="submit">
                     Update Profile
                 </Button>
             </form>
+            <br></br>
 
 
-            <button className="delete-button" onClick={deleteUser}>Delete Profile</button>
+            <button className="delete-button auth-button" onClick={deleteUser}>Delete Profile</button>
+            </div>
         </div>
         
     )

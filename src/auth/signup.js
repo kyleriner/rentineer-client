@@ -58,6 +58,7 @@ export default function Login() {
         <div className="Login">
             <form onSubmit={handleSubmit}>
                 <Form.Group>
+                    Username
                     <Form.Control
                         autoFocus
                         type='username'
@@ -65,21 +66,26 @@ export default function Login() {
                         onChange={e => setUsername(e.target.value)}
                         />
                 </Form.Group>
+                <br></br>
                 <Form.Group>
+                    Password
                     <Form.Control
                         type="password"
                         value={password}
                         onChange={e => setPassword(e.target.value)}
                         />
                 </Form.Group>
+                <br></br>
                 <Form.Group>
+                    Confirm Password
                     <Form.Control
                         type="password"
                         value={passConf}
                         onChange={e => setPassConf(e.target.value)}
                         />
                 </Form.Group>
-                <Button block disabled={!validateForm()} type="submit">
+                <br></br>
+                <Button className="auth-button" block disabled={!validateForm()} type="submit">
                     Sign Up
                 </Button>
             </form>

@@ -1,16 +1,11 @@
 .App {
   text-align: center;
+  background-color: #404040;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -37,6 +32,8 @@
   }
 }
 
+
+
 .sidebarStyle {
   display: inline-block;
   position: absolute;
@@ -53,13 +50,9 @@
 .mapContainer {
   position: absolute;
   top: 10%;
-  right: 30%;
+  right: 33.333%;
   left: 0;
   bottom: 0;
-}
-
-#main-container {
-
 }
 
 .nav-element {
@@ -67,8 +60,142 @@
 }
 
 #navbar {
-  height: 100px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 90%;
+  background-color: #404040;
+  color: #c99c55;
+  font-size: 36px;
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 15px;
+  padding-right: 30px;
+}
+
+#profile-link {
+  float: right;
+}
+
+body {
+  background-color: #404040;
+}
+
+#nav-link {
+  color: #c99c55;
+  text-decoration: none;
+}
+
+#nav-link:hover {
+  text-shadow: 2px 2px black;
+}
+
+#profile-link:visited {
+  color: #c99c55;
+}
+
+.marker {
+  background-image: url('./images/mapbox-icon.png');
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.fav-marker {
+  background-image: url('./images/mapbox-icon-green.png');
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+#auth {
+  margin-top: 10%;
+  padding: 10px;
+  height: 235px;
+  width: 200px;
+  margin-left: 40%;
+  margin-right: 50%;
+  border: 2px solid #c99c55;
   background-color: #404040;
   color: aliceblue;
-  text-align: center;
+  text-shadow: 2px 2px #404040;
+}
+
+.auth-button {
+  background-color: #404040;
+  border: 2px solid #c99c55;
+  color: aliceblue;
+  text-shadow: 2px 2px #404040;
+}
+
+#sidebar-placeholder {
+  background-color: #404040;
+  font-size: 24px;
+  border-left: 5px black;
+  position: absolute;
+  left: 66.666%;
+  right: 0;
+  bottom: 0;
+  top: 10%;
+  color: antiquewhite;
+  text-shadow: 2px 2px black;
+  display: block;
+  overflow: auto;
+}
+
+#sidebar {
+  background-color: #404040;
+  visibility: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+  background-color: #c99c55; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: black; 
+}
+
+.sidebar-image {
+  padding: 5px;
+}
+
+#prop-name {
+  background-color: #c99c55;
+  padding: 5px;
+}
+
+#prop-price {
+  padding: 10px;
+}
+
+#prop-animals {
+  padding: 10px;
+}
+
+#fav-button {
+  padding: 5px;
+  margin-left: 5px;
+  border: 2px solid #c99c55;
+  background-color: #c99c55;
+  text-shadow: 2px 2px black;
+  color: white;
+  padding: 5px;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.toggleButton {
+  border: 2px solid #c99c55;
+  background-color: #c99c55;
+  text-shadow: 2px 2px black;
+  color: white;
+  padding: 5px;
+  margin-top: 5px;
+  margin-right: 5px;
 }

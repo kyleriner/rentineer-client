@@ -8,9 +8,11 @@ export default function NavBar() {
     return(
         <div id='navbar'>
             <div id='title' className='nav-element'>
-                Rentineer Austin
+                <NavLink id='nav-link' to='/'>Rentineer Austin </NavLink>
             </div>
-            <NavLink to='/profile'> Profile </NavLink>
+            <div id="profile-link">
+            <NavLink id="nav-link" to='/profile'> Profile </NavLink>
+            </div>
         </div>
     )
 }
