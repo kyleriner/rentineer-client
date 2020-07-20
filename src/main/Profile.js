@@ -64,6 +64,11 @@ export default function Profile() {
         return username.length > 0 && password.length > 0;
     }
 
+    function handleLogout() {
+        localStorage.clear();
+        dispatch(logout());
+    }
+
     return(
         <div>
             <NavBar/>
@@ -100,6 +105,8 @@ export default function Profile() {
             </form>
             <br></br>
 
+
+            <button className="auth-button" onClick={handleLogout}> Log Out </button>
 
             <button className="delete-button auth-button" onClick={deleteUser}>Delete Profile</button>
             </div>

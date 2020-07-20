@@ -39,11 +39,8 @@ export default function Login() {
                 dispatch(login())
             })
 
-
-
-            alert('Logged in!')
         } catch (e) {
-            alert(e.message)
+            alert("Incorrect Username or Password")
         }
       }
 

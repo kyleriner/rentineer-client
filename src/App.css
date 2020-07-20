@@ -109,6 +109,7 @@ body {
   width: 25px;
   height: 25px;
   cursor: pointer;
+  position: absolute;
 }
 
 #auth {
@@ -129,6 +130,7 @@ body {
   border: 2px solid #c99c55;
   color: aliceblue;
   text-shadow: 2px 2px #404040;
+  margin-right: 10px;
 }
 
 #sidebar-placeholder {
