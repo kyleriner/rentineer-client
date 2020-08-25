@@ -13,6 +13,7 @@ export default function SideBar(props) {
     let apartments = props.aptInfo.apartments
     let cats = props.aptInfo.cat_friendly
     let dogs = props.aptInfo.dog_friendly
+    let neighborhood = props.aptInfo.neighborhood
 
     useEffect(() => {
         fetch(`http://localhost:3001/api/v1/is_fav/${id}`, {headers: {"Authorization": 'Bearer ' + localStorage.getItem('userToken')}})
@@ -55,6 +56,8 @@ export default function SideBar(props) {
         }
     }
 
+    console.log(props)
+
     if (props.aptInfo.name === null) {
         name = props.aptInfo.address
         address = 'Austin, TX ' + props.aptInfo.zip
@@ -78,6 +81,7 @@ export default function SideBar(props) {
     } else {
         dogs = "Not Dog Friendly."
     }
+
 
     function favorite() {
         fetch(`http://localhost:3001/api/v1/fav_toggle/${id}`, {headers: {"Authorization": 'Bearer ' + localStorage.getItem('userToken')}})
@@ -110,8 +114,10 @@ export default function SideBar(props) {
                 <br></br>
                 {address}
                 </div>
+                
                 <button id="fav-button" onClick={favorite}></button>
                 <br></br>
+                <p>{neighborhood}</p>
                 <div id="prop-price">
                 ${price_min} - ${price_max}
                 </div>
@@ -120,6 +126,7 @@ export default function SideBar(props) {
                     <br></br>
                     {dogs}
                 </p>
+
 
                 <ImageDisplay images={props.aptInfo.images}/>
             </div>
