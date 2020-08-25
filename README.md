@@ -1,68 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Welcome to the Rentineer Austin Client. This project showcases my full-stack web development skills utilizing a variety of technologies. I wanted to build this project because I always wanted to see how hard it really is to build out a fully functional website that takes in data from all over the country and has thousands or millions of data points. I decided on an apartment search themed website, as it also provided me with experience in utilizing mapping software. 
 
-In the project directory, you can run:
+## Front-End Technologies
 
-### `yarn start`
+In the Front-End, I use Javascript, React, Redux, React Router, and MapBox. I had originally intended on using Google Earth, however their API was severly lacking the ease of use that MapBox provided, as well as lacking the important feature of Heatmaps that I wanted to experiment with. Overall I enjoyed using the most advanced technologies I had used since my time at Flatiron, and they showed me the wide world of easy to use, hard to master technologies that make my life as a programmer so much easier.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Features
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Rentineer Austin allows a user to browse a map of Austin and see all the apartments available within city limits. I limited my data to 6 zip codes around downtown, as the API I am using could begin charging my for my use of all this data should I have included many more. Nevertheless, I display a map with icons denoting apartments, which may be clicked to see more data about them. I also include filters for the map, as well as mapping information, at the top left, where one may turn the icons on or off, show only their favorites, and toggle the heatmap. The heatmap shows red where the prices are higher, and more towards green where they are relatively lower. 
