@@ -17,16 +17,16 @@ export default function ImageDisplay(props) {
                 alt='Property'
                 width='145'
                 height='105'
-                /> 
+            />
             );
         }
-        
+
     }
 
-    return(
+    return (
         <div id='images'>
             {generateImages()}
         </div>
     )
-    
+
 }

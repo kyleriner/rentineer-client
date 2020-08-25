@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import {logout} from '../index'
+import { logout } from '../index'
 import NavBar from './NavBar'
 import { Button, Form } from "react-bootstrap";
 
@@ -18,22 +18,22 @@ export default function Profile() {
 
     useEffect(() => {
         let bearer = 'Bearer ' + localStorage.getItem('userToken')
-        fetch('http://localhost:3001/api/v1/profile', {headers: {Authorization: bearer}})
-        .then(function(response) {
-            return response.json()
-        })
-        .then(function(json){
-            setUser(json.username)
-        })
+        fetch('http://localhost:3001/api/v1/profile', { headers: { Authorization: bearer } })
+            .then(function (response) {
+                return response.json()
+            })
+            .then(function (json) {
+                setUser(json.username)
+            })
     }, [])
 
     function deleteUser() {
         let bearer = 'Bearer ' + localStorage.getItem('userToken');
-        fetch('http://localhost:3001/api/v1/profile', {method: 'DELETE', headers: {Authorization: bearer}});
+        fetch('http://localhost:3001/api/v1/profile', { method: 'DELETE', headers: { Authorization: bearer } });
         localStorage.clear();
         dispatch(logout());
     }
-    
+
     function handleSubmit(event) {
         event.preventDefault();
 
@@ -45,15 +45,16 @@ export default function Profile() {
                 "Authorization": bearer,
                 "Content-Type": "application/json",
                 "Accept": "application/json"
-            }, 
+            },
             body: JSON.stringify({
                 user: {
                     username: username,
                     password: password
-            }})
+                }
+            })
         }
 
-        
+
         fetch('http://localhost:3001/api/v1/profile', updateObj);
 
         setUser(username)
@@ -69,48 +70,48 @@ export default function Profile() {
         dispatch(logout());
     }
 
-    return(
+    return (
         <div>
-            <NavBar/>
+            <NavBar />
             <div id="auth">
-            <div> Hello {user} </div>
-            <br></br>
-            
+                <div> Hello {user} </div>
+                <br></br>
 
-            <form onSubmit={handleSubmit}>
-                <Form.Group>
-                Change Username:
+
+                <form onSubmit={handleSubmit}>
+                    <Form.Group>
+                        Change Username:
 
                     <Form.Control
-                        autoFocus
-                        type='username'
-                        value={username}
-                        onChange={e => setUsername(e.target.value)}
+                            autoFocus
+                            type='username'
+                            value={username}
+                            onChange={e => setUsername(e.target.value)}
                         />
-                </Form.Group>
-                <br></br>
+                    </Form.Group>
+                    <br></br>
                 Change Password:
 
                 <Form.Group >
-                    <Form.Control
-                        type="password"
-                        value={password}
-                        onChange={e => setPassword(e.target.value)}
+                        <Form.Control
+                            type="password"
+                            value={password}
+                            onChange={e => setPassword(e.target.value)}
                         />
-                </Form.Group>
-                <br></br>
-                <Button className = 'auth-button' block disabled={!validateForm()} type="submit">
-                    Update Profile
+                    </Form.Group>
+                    <br></br>
+                    <Button className='auth-button' block disabled={!validateForm()} type="submit">
+                        Update Profile
                 </Button>
-            </form>
-            <br></br>
+                </form>
+                <br></br>
 
 
-            <button className="auth-button" onClick={handleLogout}> Log Out </button>
+                <button className="auth-button" onClick={handleLogout}> Log Out </button>
 
-            <button className="delete-button auth-button" onClick={deleteUser}>Delete Profile</button>
+                <button className="delete-button auth-button" onClick={deleteUser}>Delete Profile</button>
             </div>
         </div>
-        
+
     )
 }

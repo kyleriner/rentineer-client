@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import ImageDisplay from './ImageDisplay'
 
 export default function SideBar(props) {
@@ -16,22 +16,22 @@ export default function SideBar(props) {
     let neighborhood = props.aptInfo.neighborhood
 
     useEffect(() => {
-        fetch(`http://localhost:3001/api/v1/is_fav/${id}`, {headers: {"Authorization": 'Bearer ' + localStorage.getItem('userToken')}})
-        .then((response) => {
-            return response.json()
-        })
-        .then((json) => {
-            setFav(json)
-            if (fav) {
-                document.getElementById('fav-button').textContent = 'Remove from Favorites'
-            } else {
-                document.getElementById('fav-button').textContent = 'Add to Favorites'
-            }
-        })
+        fetch(`http://localhost:3001/api/v1/is_fav/${id}`, { headers: { "Authorization": 'Bearer ' + localStorage.getItem('userToken') } })
+            .then((response) => {
+                return response.json()
+            })
+            .then((json) => {
+                setFav(json)
+                if (fav) {
+                    document.getElementById('fav-button').textContent = 'Remove from Favorites'
+                } else {
+                    document.getElementById('fav-button').textContent = 'Add to Favorites'
+                }
+            })
     }, [])
 
-    
-    
+
+
 
     try {
         if (props.aptInfo.address.length > 1) {
@@ -39,14 +39,14 @@ export default function SideBar(props) {
             document.getElementById('sidebar').style.visibility = 'visible'
         }
     } catch (error) {
-        
+
     }
-    
+
 
     if (price_min === null) {
         price_min = apartments[0].price
         price_max = apartments[0].price
-        for (let x = 0; x < props.aptInfo.apartments.length; x++ ) {
+        for (let x = 0; x < props.aptInfo.apartments.length; x++) {
             if (apartments[x].price < price_min) {
                 price_min = apartments[x].price
             }
@@ -84,51 +84,51 @@ export default function SideBar(props) {
 
 
     function favorite() {
-        fetch(`http://localhost:3001/api/v1/fav_toggle/${id}`, {headers: {"Authorization": 'Bearer ' + localStorage.getItem('userToken')}})
-        .then((response) => {
-            return response.json()
-        })
-        .then((json) => {
-            setFav(json)
-            if (json) {
-                document.getElementById(id).className = 'fav-marker'
-            } else {
-                document.getElementById(id).className = 'marker'
-            }
-        })
+        fetch(`http://localhost:3001/api/v1/fav_toggle/${id}`, { headers: { "Authorization": 'Bearer ' + localStorage.getItem('userToken') } })
+            .then((response) => {
+                return response.json()
+            })
+            .then((json) => {
+                setFav(json)
+                if (json) {
+                    document.getElementById(id).className = 'fav-marker'
+                } else {
+                    document.getElementById(id).className = 'marker'
+                }
+            })
 
 
 
     }
 
 
-    return(
+    return (
         <div id="sidebar-placeholder">
             <div id='welcome-text'>
                 Welcome to Rentineer Austin. Select a marker on the map to view an apartment.
             </div>
             <div id='sidebar'>
                 <div id="prop-name">
-                {name}
-                
-                <br></br>
-                {address}
+                    {name}
+
+                    <br></br>
+                    {address}
                 </div>
-                
+
                 <button id="fav-button" onClick={favorite}></button>
                 <br></br>
                 <p>{neighborhood}</p>
                 <div id="prop-price">
-                ${price_min} - ${price_max}
+                    ${price_min} - ${price_max}
                 </div>
-                <p id ="prop-animals">
+                <p id="prop-animals">
                     {cats}
                     <br></br>
                     {dogs}
                 </p>
 
 
-                <ImageDisplay images={props.aptInfo.images}/>
+                <ImageDisplay images={props.aptInfo.images} />
             </div>
         </div>
     )

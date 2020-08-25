@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Login from './login'
 import SignUp from './signup'
 import NavBar from '../main/NavBar'
@@ -11,11 +11,11 @@ export default function AuthBox() {
 
 
 
-    return(
+    return (
         <div>
-            <NavBar/>
+            <NavBar />
             <div id='auth'>
-                {authSwap ? <Login/> : <SignUp/>}
+                {authSwap ? <Login /> : <SignUp />}
                 <br></br>
                 <button className="auth-button" onClick={() => setAuthSwap(!authSwap)}>
                     {authSwap ? 'Switch to Signup' : 'Switch to Login'}
